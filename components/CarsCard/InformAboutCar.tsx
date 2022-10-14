@@ -17,7 +17,19 @@ const InformAboutCar: React.FC<InformAboutCarProp> = ({ car }) => {
             <div className={styles.images}>
                {car.images?.map((el: any, index: number) =>
                   <div key={index} className={styles.img}>
-                     <img src={el || Object.values(el)[0]} className={styles.image} />
+                     {typeof (el) == 'string' ?
+                        <img
+                           src={el}
+                           className={styles.image}
+                           alt="img car"
+                        />
+                        :
+                        <div
+                           className={styles.image}
+                        >
+                           {el.path}
+                        </div>
+                     }
                   </div>
                )}
             </div>

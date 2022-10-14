@@ -21,7 +21,7 @@ const Car: React.FC<CarProps> = ({ car }) => {
    }
 
    const DeliteAd = (id: number) => {
-      //deliteCartCar(id)
+      deliteCartCar(id)
    }
    return (
       <MainContainer keywords={car.name}>

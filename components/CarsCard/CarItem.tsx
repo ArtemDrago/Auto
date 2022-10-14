@@ -29,7 +29,6 @@ const CarItem: React.FC<CarItemProps> = ({ item }) => {
                            {f.path}
                         </div>
                      }
-
                   </div>
                )}
             </div>
