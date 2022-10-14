@@ -1,0 +1,29 @@
+.navbarcontent {
+   width: 100%;
+   height: 50px;
+   padding: 10px;
+   display: flex;
+   align-items: center;
+}
+
+.btn {
+   padding: 2.5px 20px;
+   border-radius: 8px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: 1px solid black;
+   font-size: 20px;
+   color: teal;
+   background-color: rgba(0, 128, 128, 0.15);
+   margin-right: 10px;
+
+   &:hover {
+      color: white;
+      background-color: rgba(0, 128, 128, 1);
+   }
+}
+
+.content {
+   position: relative;
+}

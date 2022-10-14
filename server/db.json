@@ -1,0 +1,105 @@
+{
+  "cars": [
+    {
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7C2S6qOrz7e5Me5YZms4ZTd5vi2z1zIxrqUFwoBQhsA&s"
+      ],
+      "name": "Volvo XC",
+      "description": "1981 года выпуска, в отличном состоянии. Пробег 150000 км.",
+      "price": "1250000",
+      "contacts": "seller@mail.ru",
+      "technical_characteristics": {
+        "brand": "Volvo vv",
+        "model": "XC75",
+        "productionYear": "2008",
+        "body": "body",
+        "mileage": "150000"
+      },
+      "options": [
+        {
+          "options": "Климат-контроль"
+        },
+        {
+          "options": "руль"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7C2S6qOrz7e5Me5YZms4ZTd5vi2z1zIxrqUFwoBQhsA&s"
+      ],
+      "name": "Volvo XC75, 2012",
+      "description": "1981 года выпуска, в отличном состоянии. Пробег 150000 км.",
+      "price": "1250000",
+      "contacts": "seller@mail.ru",
+      "technical_characteristics": {
+        "brand": "Volvo XC2",
+        "model": "XC75",
+        "productionYear": "2008",
+        "body": "body",
+        "mileage": "150000"
+      },
+      "options": [
+        {
+          "options": "Климат-контроль"
+        },
+        {
+          "options": "Климат"
+        },
+        {
+          "options": "silens"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "id": 1665761472896,
+      "images": [
+        {
+          "path": "istockphoto-1307086567-612x612.jpg"
+        }
+      ],
+      "name": "Bmw",
+      "description": "top car for  in your money? of course))))",
+      "price": "100000",
+      "contacts": "drago@mail.ru",
+      "technical_characteristics": {
+        "car_id": 1665761475227,
+        "brand": "Bmw",
+        "model": "X5 ",
+        "productionYear": "2010",
+        "body": "body",
+        "mileage": "20000"
+      },
+      "options": [
+        {
+          "options": "top speed"
+        }
+      ]
+    },
+    {
+      "images": [
+        {
+          "path": "c4bf13c5-3bea-4519-b0b0-8574047b1008.jpg"
+        },
+        {
+          "path": "c4bf13c5-3bea-4519-b0b0-8574047b1008.png"
+        }
+      ],
+      "name": "volvo",
+      "description": "sdddddddddddddddddddddddddddddddddddddd",
+      "price": "50000",
+      "contacts": "sdsdds@ddsd.sd",
+      "technical_characteristics": {
+        "brand": "volvo",
+        "model": "No inform",
+        "productionYear": "1999",
+        "body": "No inform",
+        "mileage": "200000"
+      },
+      "options": [],
+      "id": 1665765372900
+    }
+  ]
+}

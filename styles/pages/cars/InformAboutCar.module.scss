@@ -1,0 +1,117 @@
+.contentblock {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+
+.title {
+   font-size: 32px;
+   color: teal;
+   margin-bottom: 15px;
+}
+
+.images {
+   display: flex;
+   width: 40%;
+   padding: 10px 5px;
+   overflow: hidden;
+   overflow-x: auto;
+   margin-right: 25px;
+   height: 350px;
+
+   &::-webkit-scrollbar {
+      background-color: rgba(0, 128, 128, 0.2);
+      border-radius: 12px;
+      height: 10px;
+   }
+
+   &::-webkit-scrollbar-button {
+      display: none;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background-color: teal;
+      border-radius: 12px;
+   }
+}
+
+.img {
+   min-width: 500px;
+   height: 300px;
+   margin-right: 5px;
+   position: relative;
+
+   &:last-child {
+      margin-right: 0;
+   }
+}
+
+.image {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   left: 0;
+   top: 0;
+   object-fit: cover;
+   object-position: center;
+}
+
+.maincontant {
+   width: 100%;
+   height: 100%;
+   display: flex;
+}
+
+.contentinform {
+   width: 100%;
+   font-size: 20px;
+   color: teal;
+   overflow: auto;
+
+   &::-webkit-scrollbar {
+      background-color: rgba(0, 128, 128, 0.2);
+      border-radius: 12px;
+      width: 10px;
+   }
+
+   &::-webkit-scrollbar-button {
+      display: none;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 128, 128, 0.5);
+      border-radius: 12px;
+   }
+}
+
+.contentelem {
+   width: 100%;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   margin-bottom: 5px;
+}
+
+.contentelemtitle {
+   width: 150px;
+}
+
+.option {
+   margin-right: 5px;
+
+   &:last-child {
+      margin-right: 0;
+   }
+}
+
+.linkmail {
+   text-decoration: none;
+   color: teal;
+
+   &:hover {
+      color: rgb(164, 136, 83);
+   }
+}

@@ -1,0 +1,24 @@
+.contentelem {
+   width: 100%;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   margin-bottom: 5px;
+}
+
+.contentelemtitle {
+   width: 15%;
+}
+
+.option {
+   margin-right: 5px;
+
+   &:last-child {
+      margin-right: 0;
+   }
+}
+
+.contentelemtitle {
+   width: 150px;
+}

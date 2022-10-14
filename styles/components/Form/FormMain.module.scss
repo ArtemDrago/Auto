@@ -1,0 +1,64 @@
+.containerform {
+   position: absolute;
+   width: 100vw;
+   height: 100vh;
+   background-color: rgba(0, 0, 0, 0.75);
+   left: 0;
+   top: 0;
+   z-index: 3;
+   padding: 10px 50px;
+}
+
+.container {
+   width: 85%;
+   height: 90%;
+   background-color: #fff;
+   margin: 50px auto;
+   padding: 15px;
+   overflow: auto;
+
+   &::-webkit-scrollbar {
+      background-color: rgba(0, 128, 128, 0.2);
+      border-radius: 12px;
+      width: 10px;
+   }
+
+   &::-webkit-scrollbar-button {
+      display: none;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background-color: teal;
+      border-radius: 12px;
+   }
+}
+
+.formcontant {
+   display: flex;
+   flex-direction: column;
+   width: 80%;
+   margin: 0 auto;
+}
+
+.file {
+   width: 30%;
+   margin: 10px 0;
+}
+
+.input {
+   width: 66.5%;
+   margin: 5px 0;
+}
+
+.textarea {
+   width: 100%;
+   margin: 5px 0;
+   resize: none;
+}
+
+.checkcontainer {
+   padding: 10px;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+}

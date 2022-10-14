@@ -1,0 +1,42 @@
+.contentinform {
+   width: 100%;
+   font-size: 20px;
+   color: teal;
+   overflow: auto;
+
+   &::-webkit-scrollbar {
+      background-color: rgba(0, 128, 128, 0.2);
+      border-radius: 12px;
+      width: 10px;
+   }
+
+   &::-webkit-scrollbar-button {
+      display: none;
+   }
+
+   &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 128, 128, 0.5);
+      border-radius: 12px;
+   }
+}
+
+.contentelem {
+   width: 100%;
+   height: 40px;
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   margin-bottom: 5px;
+}
+
+.contentelemtitle {
+   width: 15%;
+}
+
+.option {
+   margin-right: 5px;
+
+   &:last-child {
+      margin-right: 0;
+   }
+}
