@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import * as React from 'react';
+import { string } from 'yup';
 import { CarsItemType } from '../../store/action-creator/cars';
 import styles from '../../styles/pages/cars/caritem.module.scss'
 import CarListInform from './CarListInform';
@@ -15,11 +16,20 @@ const CarItem: React.FC<CarItemProps> = ({ item }) => {
             <div className={styles.images}>
                {item.images.map((f: any, index: number) =>
                   <div key={index} className={styles.img}>
-                     <img
-                        src={f}
-                        className={styles.image}
-                        alt="img car"
-                     />
+                     {typeof (f) == 'string' ?
+                        <img
+                           src={f}
+                           className={styles.image}
+                           alt="img car"
+                        />
+                        :
+                        <div
+                           className={styles.image}
+                        >
+                           {f.path}
+                        </div>
+                     }
+
                   </div>
                )}
             </div>
