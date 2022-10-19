@@ -2,29 +2,27 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+import { FilterParamsProps } from '../../../store/action-creator/cars';
 import styles from '../../../styles/components/filter/MainFilter.module.scss'
 import FromToInput from './FromToInput';
 
 interface MainFilterProp {
    setOpentFilter: Function,
-   setFilterParams: Function
+   setFilterParams: Function,
+   filterParams: FilterParamsProps
 }
 
-const MainFilter: React.FC<MainFilterProp> = ({ setOpentFilter, setFilterParams }) => {
-   const [inputMark, setInputMark] = useState('')
-   const [inputModel, setInputModel] = useState('')
-   const [inputYear, setInputYear] = useState('')
-   const [inputBody, setInputBody] = useState('')
-   const [inputMill, setInputMill] = useState({ from: '0', to: '' })
-   const [inputPrice, setInputPrice] = useState({ from: '0', to: '' })
+const MainFilter: React.FC<MainFilterProp> = ({ setOpentFilter, setFilterParams, filterParams }) => {
+   const [inputMill, setInputMill] = useState(filterParams.mileage)
+   const [inputPrice, setInputPrice] = useState(filterParams.price)
 
    const urlQuery = () => {
       setOpentFilter(false)
       setFilterParams({
-         brand: inputMark,
-         model: inputModel,
-         productionYear: inputYear,
-         body: inputBody,
+         brand: filterParams.brand,
+         model: filterParams.model,
+         productionYear: filterParams.productionYear,
+         body: filterParams.body,
          mileage: {
             from: inputMill.from,
             to: inputMill.to
@@ -48,29 +46,30 @@ const MainFilter: React.FC<MainFilterProp> = ({ setOpentFilter, setFilterParams 
          </div>
          <div className={styles.bodyblock}>
             <Form.Control
-               value={inputMark}
-               onChange={(e) => setInputMark(e.target.value)}
+               value={filterParams.brand}
+               onChange={(e) => setFilterParams({ ...filterParams, brand: e.target.value })}
                placeholder='Mark...'
                className={styles.bodyinput}
             />
             <Form.Control
-               value={inputModel}
-               onChange={(e) => setInputModel(e.target.value)}
+               value={filterParams.model}
+               onChange={(e) => setFilterParams({ ...filterParams, model: e.target.value })}
                placeholder='Model...'
                className={styles.bodyinput}
             />
             <Form.Control
-               value={inputYear}
-               onChange={(e) => setInputYear(e.target.value)}
-               placeholder='Year...'
+               value={filterParams.productionYear}
+               onChange={(e) => setFilterParams({ ...filterParams, productionYear: e.target.value })}
+               placeholder='Year,****'
                className={styles.bodyinput}
             />
             <Form.Control
-               value={inputBody}
-               onChange={(e) => setInputBody(e.target.value)}
+               value={filterParams.body}
+               onChange={(e) => setFilterParams({ ...filterParams, body: e.target.value })}
                placeholder='Body...'
                className={styles.bodyinput}
             />
+
             <div className={styles.blockchange}>
                <div className={styles.blocktitle}> Milleges:</div>
                <FromToInput value={inputMill} setValue={setInputMill} />

@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { FilterParamsProps } from '../../store/action-creator/cars';
 import styles from '../../styles/components/HeaderContent/HeaderContent.module.scss'
 import FormMain from '../form/FormMain';
 import MainFilter from './filter/MainFilter';
@@ -8,11 +9,23 @@ interface HeaderContentProp {
    children: JSX.Element,
    resetFilter: Function,
    setFilterParams: Function,
+   filterParams: FilterParamsProps
 }
 
-const HeaderContent: React.FC<HeaderContentProp> = ({ children, setFilterParams, resetFilter }) => {
+const HeaderContent: React.FC<HeaderContentProp> = ({ children, setFilterParams, resetFilter, filterParams }) => {
    const [visible, setVisible] = useState(false)
    const [openFilter, setOpentFilter] = useState(false)
+
+   useEffect(() => {
+      if (visible && openFilter) {
+         setOpentFilter(false)
+      }
+   }, [visible])
+
+   const resetFunc = () => {
+      resetFilter()
+      setOpentFilter(false)
+   }
 
    return (
       <>
@@ -32,7 +45,7 @@ const HeaderContent: React.FC<HeaderContentProp> = ({ children, setFilterParams,
             </button>
             <button
                className={styles.btn}
-               onClick={() => resetFilter()}
+               onClick={() => resetFunc()}
             >
                Reset settings
             </button>
@@ -40,6 +53,7 @@ const HeaderContent: React.FC<HeaderContentProp> = ({ children, setFilterParams,
          <div className={styles.content}>
             {openFilter ?
                <MainFilter
+                  filterParams={filterParams}
                   setOpentFilter={setOpentFilter}
                   setFilterParams={setFilterParams}
                />

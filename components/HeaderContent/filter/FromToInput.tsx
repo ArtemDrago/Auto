@@ -7,7 +7,7 @@ interface FromToInputProp {
       from: string;
       to: string;
    },
-   setValue: Function
+   setValue: Function,
 }
 
 const FromToInput: React.FC<FromToInputProp> = ({ value, setValue }) => {

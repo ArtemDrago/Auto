@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import CarItem from '../components/CarsCard/CarItem';
+import { state } from '../components/HeaderContent/filter/stateFilter/stateFilter';
 import HeaderContent from '../components/HeaderContent/HeaderContent';
 import MainContainer from '../components/MainContainer';
-import useCreateUrl from '../hooks/useCreateUrl';
+import { useFilterCars } from '../hooks/useCreateUrl';
 import { CarsItemType } from '../store/action-creator/cars';
 import styles from '../styles/pages/cars/cars.module.scss'
 
@@ -12,32 +13,16 @@ interface interfaceCars {
 }
 
 const Cars: React.FC<interfaceCars> = ({ cars }) => {
-   const [carList, setCarList] = useState(cars || [])
+   const [carList, setCarList] = useState<CarsItemType[]>(cars || [])
    const [Url, setUrl] = useState('')
-   const [filterParams, setFilterParams] = useState({
-      brand: "",
-      model: "",
-      productionYear: "",
-      body: "",
-      mileage: {
-         from: '',
-         to: ''
-      },
-      price: {
-         from: '',
-         to: ''
-      },
-   })
+   const [filterParams, setFilterParams] = useState(state)
 
    useEffect(() => {
       setCarList(cars)
    }, [cars])
 
    useEffect(() => {
-      const key = Object.keys(filterParams)
-      const value = Object.values(filterParams)
-      const curUrl = useCreateUrl(value, key)
-      setUrl(curUrl)
+      setUrl(useFilterCars(filterParams))
    }, [filterParams])
 
    useEffect(() => {
@@ -46,12 +31,13 @@ const Cars: React.FC<interfaceCars> = ({ cars }) => {
 
    const fethingFilterCar = async () => {
       const response = await fetch(`http://localhost:3001/cars${Url}`)
-      const cars = await response.json()
+      const cars: CarsItemType[] = await response.json()
       setCarList(cars)
    }
 
    const resetFilter = () => {
       setCarList(cars)
+      setFilterParams(state)
    }
 
    return (
@@ -59,6 +45,7 @@ const Cars: React.FC<interfaceCars> = ({ cars }) => {
          <HeaderContent
             setFilterParams={setFilterParams}
             resetFilter={resetFilter}
+            filterParams={filterParams}
          >
             {carList.length != 0
                ?

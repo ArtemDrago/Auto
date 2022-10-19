@@ -9,7 +9,7 @@ interface CarListInformProp {
 
 const CarListInform: React.FC<CarListInformProp> = ({ item }) => {
    return (
-      <div className={styles.contentinform}>
+      <section className={styles.contentinform}>
 
          {item.technical_characteristics.brand != undefined && (
             <>
@@ -17,25 +17,33 @@ const CarListInform: React.FC<CarListInformProp> = ({ item }) => {
                   <span className={styles.contentelemtitle}>
                      Brand:
                   </span>
-                  {item.technical_characteristics.brand}
+                  <span className={styles.contentblock}>
+                     {item.technical_characteristics.brand}
+                  </span>
                </div>
                <div className={styles.contentelem}>
                   <span className={styles.contentelemtitle}>
                      Model:
                   </span>
-                  {item.technical_characteristics.model}
+                  <span className={styles.contentblock}>
+                     {item.technical_characteristics.model}
+                  </span>
                </div>
                <div className={styles.contentelem}>
                   <span className={styles.contentelemtitle}>
                      Year of issue:
                   </span>
-                  {item.technical_characteristics.productionYear + ' ' + 'год'}
+                  <span className={styles.contentblock}>
+                     {item.technical_characteristics.productionYear + ' ' + 'год'}
+                  </span>
                </div>
                <div className={styles.contentelem}>
                   <span className={styles.contentelemtitle}>
                      Mileage:
                   </span>
-                  {item.technical_characteristics.mileage + ' ' + 'км'}
+                  <span className={styles.contentblock}>
+                     {item.technical_characteristics.mileage + ' ' + 'км'}
+                  </span>
                </div>
             </>
          )}
@@ -44,15 +52,19 @@ const CarListInform: React.FC<CarListInformProp> = ({ item }) => {
             <span className={styles.contentelemtitle}>
                Description:
             </span>
-            {item.description}
+            <span className={styles.contentblock}>
+               {item.description}
+            </span>
          </div>
          <div className={styles.contentelem}>
             <span className={styles.contentelemtitle}>
                Price:
             </span>
-            {item.price} руб
+            <span className={styles.contentblock}>
+               {item.price} руб
+            </span>
          </div>
-      </div>
+      </section>
    );
 }
 

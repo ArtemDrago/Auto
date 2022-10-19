@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import * as React from 'react';
-import { string } from 'yup';
 import { CarsItemType } from '../../store/action-creator/cars';
 import styles from '../../styles/pages/cars/caritem.module.scss'
 import CarListInform from './CarListInform';

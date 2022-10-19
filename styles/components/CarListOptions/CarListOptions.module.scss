@@ -1,14 +1,22 @@
 .contentelem {
    width: 100%;
-   height: 40px;
    display: flex;
    align-items: center;
    justify-content: flex-start;
    margin-bottom: 5px;
+   padding: 5px;
 }
 
 .contentelemtitle {
    width: 15%;
+   display: flex;
+   justify-content: flex-start;
+}
+
+.contentelemtitleto {
+   width: 15%;
+   display: flex;
+   justify-content: flex-start;
 }
 
 .option {

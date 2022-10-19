@@ -1,3 +1,4 @@
+import { FilterParamsProps } from "../store/action-creator/cars"
 
 export default function useCreateUrl(value: any[] | string[], key: string[]) {
    let url = ['?']
@@ -23,3 +24,11 @@ export default function useCreateUrl(value: any[] | string[], key: string[]) {
    })
    return totalUrl.substring(0, totalUrl.length - 1)
 }
+
+export const useFilterCars = (filterParams: FilterParamsProps) => {
+   const key = Object.keys(filterParams)
+   const value = Object.values(filterParams)
+   const curUrl = useCreateUrl(value, key)
+   return curUrl
+}
+

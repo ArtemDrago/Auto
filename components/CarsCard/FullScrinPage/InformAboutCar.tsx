@@ -10,7 +10,7 @@ interface InformAboutCarProp {
 
 const InformAboutCar: React.FC<InformAboutCarProp> = ({ car }) => {
    return (
-      <div className={styles.contentblock}>
+      <section className={styles.contentblock}>
          <h2 className={styles.title}>
             {car.name}
          </h2>
@@ -46,13 +46,17 @@ const InformAboutCar: React.FC<InformAboutCarProp> = ({ car }) => {
                      <span className={styles.contentelemtitle}>
                         Description:
                      </span>
-                     {car.description}
+                     <span className={styles.contentbox}>
+                        {car.description}
+                     </span>
                   </div>
                   <div className={styles.contentelem}>
                      <span className={styles.contentelemtitle}>
                         Price:
                      </span>
-                     {car.price} руб
+                     <span className={styles.contentbox}>
+                        {car.price} руб
+                     </span>
                   </div>
                   <div className={styles.contentelem}>
                      <span className={styles.contentelemtitle}>
@@ -65,7 +69,7 @@ const InformAboutCar: React.FC<InformAboutCarProp> = ({ car }) => {
                </div>
             </div>
          </div>
-      </div>
+      </section>
    );
 }
 

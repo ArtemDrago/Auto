@@ -21,16 +21,18 @@
 }
 
 .contentelem {
-   width: 100%;
-   height: 40px;
+   max-width: 100%;
    display: flex;
    align-items: center;
    justify-content: flex-start;
    margin-bottom: 5px;
+   padding: 5px;
 }
 
 .contentelemtitle {
    width: 15%;
+   display: flex;
+   justify-content: flex-start;
 }
 
 .option {
@@ -39,4 +41,9 @@
    &:last-child {
       margin-right: 0;
    }
+}
+
+.contentblock {
+   max-width: 70%;
+
 }

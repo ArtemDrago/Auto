@@ -52,6 +52,31 @@
         }
       ],
       "id": 2
+    },
+    {
+      "id": 1666208259656,
+      "images": [
+        {
+          "path": "istockphoto-1307086567-612x612.jpg"
+        }
+      ],
+      "name": "BMW",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo sit ut ipsam deserunt dolores, rerum doloribus fugit, accusamus, qui iste quibusdam natus corrupti velit accusantium numquam corporis amet excepturi maiores.\n",
+      "price": "100000",
+      "contacts": "drago@mail.ru",
+      "technical_characteristics": {
+        "car_id": 1666208261987,
+        "brand": "BMW X5",
+        "model": "X5S",
+        "productionYear": "1985",
+        "body": "good",
+        "mileage": "50000"
+      },
+      "options": [
+        {
+          "options": "climate control"
+        }
+      ]
     }
   ]
 }
