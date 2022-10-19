@@ -8,33 +8,37 @@ interface CarListInformProp {
 }
 
 const CarListInform: React.FC<CarListInformProp> = ({ item }) => {
-
    return (
       <div className={styles.contentinform}>
-         <div className={styles.contentelem}>
-            <span className={styles.contentelemtitle}>
-               Brand:
-            </span>
-            {item.technical_characteristics.brand == '' ? 'Not information' : item.technical_characteristics.brand}
-         </div>
-         <div className={styles.contentelem}>
-            <span className={styles.contentelemtitle}>
-               Model:
-            </span>
-            {item.technical_characteristics.model == '' ? 'Not information' : item.technical_characteristics.model}
-         </div>
-         <div className={styles.contentelem}>
-            <span className={styles.contentelemtitle}>
-               Year of issue:
-            </span>
-            {item.technical_characteristics.productionYear == '' ? 'Not information' : item.technical_characteristics.productionYear + ' ' + 'год'}
-         </div>
-         <div className={styles.contentelem}>
-            <span className={styles.contentelemtitle}>
-               Mileage:
-            </span>
-            {item.technical_characteristics.mileage == '' ? 'Not information' : item.technical_characteristics.mileage + ' ' + 'км'}
-         </div>
+
+         {item.technical_characteristics.brand != undefined && (
+            <>
+               <div className={styles.contentelem}>
+                  <span className={styles.contentelemtitle}>
+                     Brand:
+                  </span>
+                  {item.technical_characteristics.brand}
+               </div>
+               <div className={styles.contentelem}>
+                  <span className={styles.contentelemtitle}>
+                     Model:
+                  </span>
+                  {item.technical_characteristics.model}
+               </div>
+               <div className={styles.contentelem}>
+                  <span className={styles.contentelemtitle}>
+                     Year of issue:
+                  </span>
+                  {item.technical_characteristics.productionYear + ' ' + 'год'}
+               </div>
+               <div className={styles.contentelem}>
+                  <span className={styles.contentelemtitle}>
+                     Mileage:
+                  </span>
+                  {item.technical_characteristics.mileage + ' ' + 'км'}
+               </div>
+            </>
+         )}
          <CarListOptions item={item} />
          <div className={styles.contentelem}>
             <span className={styles.contentelemtitle}>

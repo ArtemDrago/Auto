@@ -1,31 +1,19 @@
 import * as React from 'react';
-import { ListItemText, Paper } from '@mui/material';
+import { Paper } from '@mui/material';
 import { Controller, FieldErrorsImpl } from 'react-hook-form';
 import Dropzone from "react-dropzone";
 import CloudUpload from "@mui/icons-material/CloudUpload";
 import styles from '../../../styles/components/FileInput/FileInput.module.scss'
 import { ErrorMessage } from '@hookform/error-message';
+import { CarsItemType } from '../../../store/action-creator/cars';
+import ImgList from './ImgList';
 
 interface FileInputProp {
    control: any,
    name: string,
-   keywords: string,
-   errors: FieldErrorsImpl<{
-      specifications: boolean;
-      files: string[];
-      markCar: string;
-      descriptionCar: string;
-      Price: string;
-      Mail: string;
-      options: NonNullable<any[] | string[]>;
-      MarkCar: string;
-      Model: string;
-      year: string;
-      Body: string;
-      Mileage: string;
-   }>
+   errors: FieldErrorsImpl<CarsItemType>
 }
-const FileInput: React.FC<FileInputProp> = ({ control, name, keywords, errors }) => {
+const FileInput: React.FC<FileInputProp> = ({ control, name, errors }) => {
 
    return (
       <Controller
@@ -57,40 +45,14 @@ const FileInput: React.FC<FileInputProp> = ({ control, name, keywords, errors })
                      </Paper>)
                   }
                </Dropzone>
-               {keywords === 'change' ?
-                  <div>
-                     {value.map((f: any, index: number) =>
-                        <div key={index} className={styles.listImg}>
-                           <img src={f} className={styles.file} />
-                        </div>
-                     )}
-                  </div>
-                  :
-                  <div className={styles.listImg}>
-                     {value && value.map((f: any, index: number) => (
-                        <div
-                           key={index}
-                           className={styles.list}
-                        >
-                           <div className={styles.fileBox} >
-                              <img
-                                 src={f ? URL.createObjectURL(f) : ''}
-                                 className={styles.file}
-                              />
-                           </div>
-                           <ListItemText
-                              primary={f.path}
-                              secondary={f.size}
-                           />
-                        </div>
-                     ))}
-                     <ErrorMessage errors={errors} name={name} render={() =>
-                        <p className={styles.fileValidation}>
-                           You need to add at least one file
-                        </p>}
-                     />
-                  </div>
-               }
+               <div className={styles.listImg}>
+                  <ImgList value={value} />
+                  <ErrorMessage errors={errors} name={name} render={() =>
+                     <p className={styles.fileValidation}>
+                        You need to add at least one file
+                     </p>}
+                  />
+               </div>
             </>}
       />
    );

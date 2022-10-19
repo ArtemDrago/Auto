@@ -100,6 +100,60 @@
       },
       "options": [],
       "id": 1665765372900
+    },
+    {
+      "id": 1666176214025,
+      "images": [
+        {
+          "path": "c4bf13c5-3bea-4519-b0b0-8574047b1008.jpg"
+        }
+      ],
+      "name": "Drago",
+      "description": "sdddddddddddddddddddddddddddddddddddddddddd",
+      "price": "222",
+      "contacts": "sdsd@sdsd.sd",
+      "technical_characteristics": {
+        "car_id": 1666176216356,
+        "brand": "No inform",
+        "model": "No inform",
+        "productionYear": "No inform",
+        "body": "No inform",
+        "mileage": "No inform"
+      },
+      "options": []
+    },
+    {
+      "images": [
+        {
+          "path": "c4bf13c5-3bea-4519-b0b0-8574047b1008.jpg"
+        },
+        {
+          "path": "c4bf13c5-3bea-4519-b0b0-8574047b1008.png"
+        }
+      ],
+      "name": "sssssssssssssss",
+      "description": "sssssssssssssssssssssssssssssssssssssssssssssss",
+      "price": "222",
+      "contacts": "sdsd@sdsd.sd",
+      "technical_characteristics": {},
+      "options": [],
+      "id": 1666176775275
+    },
+    {
+      "id": 1666181877419,
+      "images": [
+        {
+          "path": "c4bf13c5-3bea-4519-b0b0-8574047b1008.jpg"
+        }
+      ],
+      "name": "Drago",
+      "description": "sdddddddddddddddddddddddddddd",
+      "price": "22",
+      "contacts": "dsdsd@sdsd.sds",
+      "technical_characteristics": {
+        "car_id": 1666181879750
+      },
+      "options": []
     }
   ]
 }

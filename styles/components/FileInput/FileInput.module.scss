@@ -15,18 +15,10 @@
    color: #e0e0e0;
 }
 
-.file {
-   width: 150px;
-   height: 150px;
-   object-fit: cover;
-   object-position: center;
-}
 
-.list {
-   width: 20%;
-   display: flex;
-   flex-direction: column;
-   margin-right: 10px;
+.fileValidation {
+   width: 100%;
+   color: #dc3545;
 }
 
 .listImg {
@@ -48,9 +40,4 @@
       background-color: teal;
       border-radius: 12px;
    }
-}
-
-.fileValidation {
-   width: 100%;
-   color: #dc3545;
 }

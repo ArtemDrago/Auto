@@ -2,7 +2,7 @@ import Link from 'next/link';
 import * as React from 'react';
 import { useState } from 'react';
 import A from '../../components/A/A';
-import InformAboutCar from '../../components/CarsCard/InformAboutCar';
+import InformAboutCar from '../../components/CarsCard/FullScrinPage/InformAboutCar';
 import FormMain from '../../components/form/FormMain';
 import MainContainer from '../../components/MainContainer';
 import { CarsItemType } from '../../store/action-creator/cars';

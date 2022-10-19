@@ -9,10 +9,11 @@ import FileInput from './FileInput/FileInput';
 import OptionsForm from './Form/OptionsForm/OptionsFotm';
 import { schema } from './shema/Shema';
 import Specifications from './Form/Specifications/Specifications';
-import { CarsItemDataType, CarsItemType } from '../../store/action-creator/cars';
+import { CarsItemType } from '../../store/action-creator/cars';
 import { addNewCartCar, changeCartCar, createNewCardCar } from '../../store/redusers/stateReduser';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { DefultValues } from './DefaultValues';
 
 interface FormMainProp {
    visible: boolean;
@@ -27,25 +28,11 @@ const FormMain: React.FC<FormMainProp> = ({ visible, setVisible, keywords, car }
    const { register, handleSubmit, formState: { errors }, control, reset } = useForm({
       mode: "onBlur",
       resolver: yupResolver(schema),
-      defaultValues: {
-         specifications: dataItem?.technical_characteristics?.productionYear != undefined ? true : false,
-         files: dataItem?.images,
-         markCar: dataItem?.name,
-         descriptionCar: dataItem?.description,
-         Price: dataItem?.price,
-         Mail: dataItem?.contacts,
-         options: dataItem?.options,
-         MarkCar: dataItem?.technical_characteristics?.brand,
-         Model: dataItem?.technical_characteristics?.model,
-         year: dataItem?.technical_characteristics?.productionYear,
-         Body: dataItem?.technical_characteristics?.body,
-         Mileage: dataItem?.technical_characteristics?.mileage
-      }
+      defaultValues: DefultValues(dataItem)
    })
+   const specifications = useWatch({ control, name: "technical_characteristics.specifications" })
 
-   const specifications = useWatch({ control, name: "specifications" })
-
-   const onSubmit = (data: CarsItemDataType | any) => {
+   const onSubmit = (data: CarsItemType) => {
       const newCar: CarsItemType = createNewCardCar(data)
       if (keywords != 'change') {
          addNewCartCar(newCar)
@@ -66,64 +53,63 @@ const FormMain: React.FC<FormMainProp> = ({ visible, setVisible, keywords, car }
                onSubmit={handleSubmit(onSubmit)}
             >
                <TextField
-                  {...register('markCar')}
+                  {...register('name')}
                   type='text'
-                  id='markCar'
+                  id='name'
                   label="Mark Car"
-                  name="markCar"
+                  name="name"
                   variant='outlined'
                   margin='normal'
                   fullWidth
-                  error={!!errors.markCar}
-                  helperText={`${errors?.markCar?.message || ''}`}
+                  error={!!errors.name}
+                  helperText={`${errors?.name?.message || ''}`}
                />
                <TextField
-                  {...register('descriptionCar')}
+                  {...register('description')}
                   className={styles.textarea}
-                  id='descriptionCar'
-                  name="descriptionCar"
+                  id='description'
+                  name="description"
                   multiline
                   label={'Description Car'}
                   margin='normal'
                   variant='filled'
                   rows={3}
-                  error={!!errors.descriptionCar}
-                  helperText={`${errors?.descriptionCar?.message || ''}`}
+                  error={!!errors.description}
+                  helperText={`${errors?.description?.message || ''}`}
                />
                <TextField
-                  {...register('Price')}
+                  {...register('price')}
                   type='text'
-                  id='Price'
+                  id='price'
                   label="Price"
-                  name="Price"
+                  name="price"
                   variant='outlined'
                   margin='normal'
                   fullWidth
-                  error={!!errors.Price}
-                  helperText={`${errors?.Price?.message || ''}`}
+                  error={!!errors.price}
+                  helperText={`${errors?.price?.message || ''}`}
                />
                <TextField
-                  {...register('Mail')}
+                  {...register('contacts')}
                   type='text'
-                  id='Mail'
+                  id='contacts'
                   label="Mail"
-                  name="Mail"
+                  name="contacts"
                   variant='outlined'
                   margin='normal'
                   fullWidth
-                  error={!!errors.Mail}
-                  helperText={`${errors?.Mail?.message || ''}`}
+                  error={!!errors.contacts}
+                  helperText={`${errors?.contacts?.message || ''}`}
                />
                <FileInput
-                  keywords={keywords}
-                  name='files'
+                  name='images'
                   control={control}
                   errors={errors}
                />
                <FormControlLabel
                   control={
                      <Checkbox
-                        {...register('specifications')}
+                        {...register('technical_characteristics.specifications')}
                         color='primary'
                         defaultChecked={dataItem?.technical_characteristics?.productionYear != undefined ? true : false}
                      />
@@ -152,4 +138,3 @@ const FormMain: React.FC<FormMainProp> = ({ visible, setVisible, keywords, car }
 }
 
 export default FormMain;
-

@@ -1,76 +1,76 @@
 import * as React from 'react';
 import { TextField } from '@mui/material';
 import { FieldErrorsImpl, UseFormRegister } from 'react-hook-form';
+import { CarsItemType } from '../../../../store/action-creator/cars';
 
 interface SpecificationsProp {
    register: UseFormRegister<any>,
-   errors: FieldErrorsImpl<{ [x: string]: any; }>
+   errors: FieldErrorsImpl<CarsItemType>
 }
 
 const Specifications: React.FC<SpecificationsProp> = ({ register, errors }) => {
    return (
       <div>
          <TextField
-            {...register('MarkCar')}
+            {...register('technical_characteristics.brand')}
             type='text'
-            id='MarkCar'
+            id='technical_characteristics.brand'
             label="Mark Car"
-            name="MarkCar"
+            name="technical_characteristics.brand"
             variant='outlined'
             margin='normal'
             fullWidth
-            error={!!errors.MarkCar}
-            helperText={`${errors?.MarkCar?.message || ''}`}
+            error={!!errors.technical_characteristics?.brand}
+            helperText={`${errors?.technical_characteristics?.brand?.message || ''}`}
          />
          <TextField
-            {...register('Model')}
+            {...register('technical_characteristics.model')}
             type='text'
-            id='Model'
+            id='technical_characteristics.model'
             label="Model"
-            name="Model"
+            name="technical_characteristics.model"
             variant='outlined'
             margin='normal'
             fullWidth
-            error={!!errors.Model}
-            helperText={`${errors?.Model?.message || ''}`}
+            error={!!errors.technical_characteristics?.model}
+            helperText={`${errors?.technical_characteristics?.model?.message || ''}`}
          />
          <TextField
-            {...register('year')}
+            {...register('technical_characteristics.productionYear')}
             type='text'
-            id='year'
+            id='technical_characteristics.productionYear'
             label="year"
-            name="year"
+            name="technical_characteristics.productionYear"
             variant='outlined'
             margin='normal'
             fullWidth
-            error={!!errors.year}
-            helperText={`${errors?.year?.message || ''}`}
+            error={!!errors.technical_characteristics?.productionYear}
+            helperText={`${errors?.technical_characteristics?.productionYear?.message || ''}`}
          />
          <TextField
-            {...register('Body')}
+            {...register('technical_characteristics.body')}
             type='text'
-            id='Body'
+            id='technical_characteristics.body'
             label="Body"
-            name="Body"
+            name="technical_characteristics.body"
             variant='outlined'
             margin='normal'
             fullWidth
-            error={!!errors.Body}
-            helperText={`${errors?.Body?.message || ''}`}
+            error={!!errors.technical_characteristics?.body}
+            helperText={`${errors?.technical_characteristics?.body?.message || ''}`}
          />
          <TextField
-            {...register('Mileage')}
+            {...register('technical_characteristics.mileage')}
             type='text'
-            id='Mileage'
+            id='technical_characteristics.mileage'
             label="Mileage"
-            name="Mileage"
+            name="technical_characteristics.mileage"
             variant='outlined'
             margin='normal'
             fullWidth
-            error={!!errors.Mileage}
-            helperText={`${errors?.Mileage?.message || ''}`}
+            error={!!errors.technical_characteristics?.mileage}
+            helperText={`${errors?.technical_characteristics?.mileage?.message || ''}`}
          />
-
       </div>
    );
 }

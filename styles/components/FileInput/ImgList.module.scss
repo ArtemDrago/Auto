@@ -1,0 +1,24 @@
+.fileBox {
+   width: 100%;
+}
+
+.file {
+   width: 150px;
+   height: 150px;
+   object-fit: cover;
+   object-position: center;
+}
+
+.list {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   margin-right: -20px;
+   padding-right: 20px;
+}
+
+.shortlist {
+   display: flex;
+   flex-direction: column;
+   margin-right: 10px;
+}
